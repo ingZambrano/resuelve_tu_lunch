@@ -16,6 +16,12 @@ import { UserService } from './user/shared/user.service';
 import { RouterModule } from '@angular/router'
 import { appRoutes } from './routes';
 
+import { environment } from '../environments/environment';
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFireDatabaseModule } from 'angularfire2/database';
+// import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,14 +32,13 @@ import { appRoutes } from './routes';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    // HomeComponent,
-    // UserComponent,
-    // SignInComponent,
-    // SignUpComponent,
+    FormsModule,    
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    // AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    // AngularFireDatabaseModule,
+    // AngularFireAuthModule
   ],  
 
   providers: [UserService],
