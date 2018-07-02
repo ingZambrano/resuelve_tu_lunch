@@ -5,13 +5,11 @@ import { AppComponent } from './app.component';
 
 
 import { FormsModule} from '@angular/forms';
-import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserService } from './user/shared/user.service';
 
 import { RouterModule } from '@angular/router'
 import { appRoutes } from './routes';
@@ -26,7 +24,6 @@ import { DashboardComponent } from './user/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     UserComponent,
     SignInComponent,
     DashboardComponent
@@ -43,7 +40,7 @@ import { DashboardComponent } from './user/dashboard/dashboard.component';
     AngularFireAuthModule
   ],  
 
-  providers: [UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
