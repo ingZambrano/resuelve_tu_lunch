@@ -17,9 +17,10 @@ import { RouterModule } from '@angular/router'
 import { appRoutes } from './routes';
 
 import { environment } from '../environments/environment';
-// import { AngularFireModule } from 'angularfire2';
-// import { AngularFireDatabaseModule } from 'angularfire2/database';
-// import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { environment } from '../environments/environment';
     AppComponent,
     HomeComponent,
     UserComponent,
-    SignInComponent
+    SignInComponent,
+    DashboardComponent
 
   ],
   imports: [
@@ -36,9 +38,9 @@ import { environment } from '../environments/environment';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
-    // AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
-    // AngularFireDatabaseModule,
-    // AngularFireAuthModule
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],  
 
   providers: [UserService],
